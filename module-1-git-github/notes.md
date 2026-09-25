@@ -7,7 +7,7 @@
 
 ## What is Git? What is GitHub? (explain like you're teaching a friend who's never used either)
 
-[Git is a tool for version control that tracks the changes in our code. While GitHub is a platform where we can share our code. Think of the Git as our camera and GitHub is the Instagram.]
+Git is a tool for version control that tracks the changes in our code. While GitHub is a platform where we can share our code. Think of the Git as our camera and GitHub is the Instagram
 
 ---
 
@@ -29,7 +29,14 @@
 ```
 # paste your actual commands here
 ```
-
+git branch notes
+git switch notes
+git add .
+git status
+git commit -m "answered until Key vocabulary"
+git push (error)
+git push --set-upstream origin notes
+git push origin notes:main
 ---
 
 ## A mistake I made (or one I want to avoid)
