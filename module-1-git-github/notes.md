@@ -36,12 +36,13 @@ git status
 git commit -m "answered until Key vocabulary"
 git push (error)
 git push --set-upstream origin notes
+git push
 git push origin notes:main
 ---
 
 ## A mistake I made (or one I want to avoid)
 
-[What tripped you up? A confusing error message, committing to the wrong branch, a merge conflict — explain it so a classmate reading this avoids the same mistake.]
+I cannot push on the branch because the current branch "notes" has no upstream branch. Though, it showed me what to do to push the current branch and set the remote as upstream.
 
 ---
 
