@@ -5,12 +5,13 @@ def display_menu():
     print('2. View all  movies')
     print('3. Count watched vs unwatched')
     print('4. Find a movie')
-    print('5. Exit')
+    print('5. Remove a movie')
+    print('6. Exit')
 
 def add_movie(movie_list):
     movie_tile = input('Enter movie title: ')
     director = input('Enter the director: ')
-    status = input('Watcher or Unwatched: ')
+    status = input('Watched or Unwatched: ')
 
     movie = (f'{movie_tile} - {director} - {status}')
 
@@ -42,8 +43,8 @@ def count_watched_unwatched(movie_list):
     print(f"Unwatched: {unwatched_count}")
     return watched_count, unwatched_count
 
-
 def find_movie(movie_list):
+
     title = input('Enter the title of the movie: ')
 
     for x in movie_list:
@@ -53,6 +54,17 @@ def find_movie(movie_list):
         else:
             print('Movie not found.')
 
+def remove_movie(movie_list):
+    title = input('Enter the title of the movie: ')
+
+    for x in movie_list:
+            if title in x:
+                print('Movie found.')
+                movie_list.remove(x)
+                print('Movie deleted.')
+            else:
+                print('Movie not found.')
+    
 def main():
     while True:
         print('=== Movie Collection Manager ===')
@@ -68,7 +80,11 @@ def main():
         elif choice == 4:
             find_movie(movie_list)
         elif choice == 5:
+            remove_movie(movie_list)
+        elif choice == 6:
             print('Exiting')
             break
+        else:
+            print('Invalid input')
 
 main()
