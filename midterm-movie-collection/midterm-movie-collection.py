@@ -29,7 +29,18 @@ def view_movies(movie_list):
             print(i)
 
 def count_watched_unwatched(movie_list):
-    pass
+    watched_count = 0
+    unwatched_count = 0
+    
+    for x in movie_list:
+        if 'unwatched' in x:
+            unwatched_count += 1
+        else:
+            watched_count += 1
+            
+    print(f"Watched: {watched_count}")
+    print(f"Unwatched: {unwatched_count}")
+    return watched_count, unwatched_count
 
 
 def find_movie(movie_list):
@@ -53,7 +64,7 @@ def main():
         elif choice == 2:
             view_movies(movie_list)
         elif choice == 3:
-            print(' Counted watched and unwatched')
+            count_watched_unwatched(movie_list)
         elif choice == 4:
             find_movie(movie_list)
         elif choice == 5:
