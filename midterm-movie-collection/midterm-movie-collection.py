@@ -33,7 +33,14 @@ def count_watched_unwatched(movie_list):
 
 
 def find_movie(movie_list):
-    pass
+    title = input('Enter the title of the movie: ')
+
+    for x in movie_list:
+        if title in x:
+            print('Movie found!')
+            print(x)
+        else:
+            print('Movie not found.')
 
 def main():
     while True:
@@ -48,7 +55,7 @@ def main():
         elif choice == 3:
             print(' Counted watched and unwatched')
         elif choice == 4:
-            print(' Found the movie')
+            find_movie(movie_list)
         elif choice == 5:
             print('Exiting')
             break
