@@ -4,6 +4,11 @@ pokemon1 = requests.get("https://pokeapi.co/api/v2/pokemon/1")
 name1 = pokemon1.json()['name']
 height1  = pokemon1.json()['height']
 weight1 = pokemon1.json()['weight']
+pokemon1ablitiy1 = pokemon1.json()['abilities'][0]['ability']['name']
+pokemon1ablitiy2 = pokemon1.json()['abilities'][1]['ability']['name']
+
+print(pokemon1ablitiy1)
+print([pokemon1ablitiy2])
 
 pokemon2 = requests.get("https://pokeapi.co/api/v2/pokemon/4")
 name2 = pokemon2.json()['name']
@@ -35,8 +40,12 @@ pokemon_list = [
 
 random_pokemon = random.choices(pokemon_list)
 print(random_pokemon)
-print(f"Pokemon height is: {random_pokemon[0][1]}")
-print(f"Pokemon weight is: {random_pokemon[0][2]}")
+
+def clue():
+    print(f"Pokemon height is: {random_pokemon[0][1]}")
+    print(f"Pokemon weight is: {random_pokemon[0][2]}")
+
+clue()
 
 pokemon_to_guess = random_pokemon[0][0]
 
@@ -49,8 +58,6 @@ attempt = 1
 while True:
 
     guess = input("Enter pokemon name to guess, enter 'q' to exit: ")
-    print(f"Pokemon height is: {random_pokemon[0][1]}")
-    print(f"Pokemon weight is: {random_pokemon[0][2]}")
 
     if guess == 'q':
         print("Exiting...")
@@ -59,6 +66,8 @@ while True:
         print("Correct! Nice one!")
     elif guess != pokemon_to_guess:
         print("Nah, try again")
+        print(f"Pokemon height is: {random_pokemon[0][1]}")
+        print(f"Pokemon weight is: {random_pokemon[0][2]}")
         attempt += 1
 
         if attempt <4:
